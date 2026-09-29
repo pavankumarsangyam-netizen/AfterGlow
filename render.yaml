@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: afterglow
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: HINDSIGHT_API_KEY
+        sync: false
+      - key: HINDSIGHT_API_URL
+        value: https://api.hindsight.vectorize.io
+      - key: HINDSIGHT_BANK_ID
+        value: northstar-oncall
+      - key: GROQ_API_KEY
+        sync: false
+      - key: AFTERGLOW_ACCESS_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b

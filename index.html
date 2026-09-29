@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f6f8" />
+  <title>Afterglow — Incident intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Afterglow home"><span class="brand-mark">a<span>·</span></span><span class="brand-name">afterglow</span></a>
+      <div class="workspace"><div class="workspace-icon">N</div><div><strong>Northstar Cloud · Demo</strong><small>Platform engineering</small></div><span class="chevron">⌄</span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">▦</span>Overview</button>
+        <button class="nav-item" data-view="incidents"><span class="nav-icon">◉</span>Incidents <span class="nav-count">3</span></button>
+        <button class="nav-item" data-view="memory"><span class="nav-icon">◈</span>Memory bank</button>
+        <button class="nav-item" data-view="playbooks"><span class="nav-icon">▤</span>Runbooks</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="memory-status"><span class="status-dot"></span><div><strong id="memory-connection">Hindsight demo mode</strong><small id="memory-bank-label">Sample bank: northstar-oncall</small></div><span class="pulse"></span></div><button class="nav-item settings" data-view="settings"><span class="nav-icon">⚙</span>Settings</button><div class="profile"><div class="avatar">PK</div><div><strong>Pavan Kumar</strong><small>On-call engineer</small></div><span class="chevron">···</span></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="crumbs">Workspace <span>/</span> <b id="crumb-title">Overview</b></div><div class="top-actions"><span class="live-chip" id="connection-label"><i></i>Demo workspace · sample data</span><button class="icon-button" aria-label="Notifications">♧<b></b></button><div class="top-avatar">PK</div></div></header>
+      <section class="page-content" id="page-content"></section>
+    </main>
+  </div>
+  <div id="access-gate" class="access-gate" hidden>
+    <form id="access-form" class="access-card">
+      <div class="ai-mark">✳</div>
+      <div class="eyebrow">PRIVATE WORKSPACE</div>
+      <h2>Connect to Afterglow</h2>
+      <p>This live demo is protected. Enter the workspace access key provided by the owner.</p>
+      <label for="access-key">Workspace access key</label>
+      <input id="access-key" type="password" autocomplete="current-password" required />
+      <div id="access-error" class="access-error" aria-live="polite"></div>
+      <button class="primary-btn" type="submit">Unlock workspace <span>→</span></button>
+    </form>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
